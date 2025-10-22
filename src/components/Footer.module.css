@@ -1,0 +1,58 @@
+.footer {
+  background: #153d33;
+  color: #fff;
+  padding: 2rem 8% 1rem;
+  margin-top: 3rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brand h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.brand p {
+  font-size: 0.95rem;
+  color: #cdeed6;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.nav a {
+  color: #cdeed6;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.copy {
+  border-top: 1px solid #cdeed6;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #cdeed6;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    align-items: center;
+    text-align: center;
+  }
+  .nav {
+    justify-content: center;
+  }
+}

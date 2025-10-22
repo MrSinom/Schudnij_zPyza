@@ -1,0 +1,155 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  padding: 4rem 8%;
+  background: linear-gradient(135deg, #eef7f2 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  top: -20%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle at 20% 30%, #daf0e5, transparent 65%);
+  z-index: 0;
+}
+
+.content, .previewPane {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  max-width: 800px;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: #173f34;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+}
+
+.features li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+
+.features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+.ctaRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.buy, .preview {
+  padding: 0.85rem 1.3rem;
+  border-radius: 8px;
+  border: 1px solid #173f34;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.buy {
+  background-color: #173f34;
+  color: #fff;
+}
+
+.preview {
+  background-color: transparent;
+  color: #173f34;
+}
+
+.buy:hover, .preview:hover {
+  transform: translateY(-1px);
+  background-color: #1c4f43;
+  color: #fff;
+}
+
+.previewPane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageMock {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.06);
+  max-width: 420px;
+}
+
+.pageMock h3 {
+  margin-bottom: 0.75rem;
+  color: #173f34;
+  font-weight: 700;
+}
+
+.pageMock p {
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    padding: 3rem 6%;
+  }
+  .previewPane {
+    order: 2;
+  }
+}
+/* fragment do dodania lub dostosowania w src/components/Ebook.module.css */
+.buy {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #0b8f5a;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.buy[disabled],
+.buy[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.preview {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.ctaRow { display:flex; gap:12px; align-items:center; }
