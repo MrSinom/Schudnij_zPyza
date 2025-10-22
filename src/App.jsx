@@ -12,7 +12,6 @@ import Training from "./components/Training";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
 
-// strony polityk/regulaminów
 import CookiesPolicy from "./Maintanance/CookiesPolicy";
 import Policy from "./Maintanance/Policy";
 
@@ -33,7 +32,6 @@ function App() {
           <Route path="/polityka-cookies" element={<CookiesPolicy />} />
           <Route path="/regulamin" element={<Policy />} />
 
-          {/* Fallback – jeśli ktoś wpisze nieistniejącą ścieżkę */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
