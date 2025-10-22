@@ -1,0 +1,23 @@
+.particlesContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: auto; /* kontener nasłuchuje ruchu */
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: center center;
+  will-change: transform, opacity;
+  pointer-events: none; /* nie blokuje interakcji z UI */
+  display: inline-block;
+}
+
+.particle svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

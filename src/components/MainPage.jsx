@@ -1,8 +1,11 @@
 import styles from "./MainPage.module.css";
-import heroImg from "../assets/portrait.svg"; 
+import heroImg from "../assets/portrait.svg";
+import Particles from "../Animation/Particles"
+
 function MainPage() {
   return (
     <section className={styles.hero}>
+      <Particles count={20} />          {/* <-- tutaj wstawiasz animację */}
       <div className={styles.inner}>
         <div className={styles.textWrapper}>
           <h1>Schudnij z Pyzą</h1>

@@ -1,6 +1,6 @@
 .container {
   padding: 4rem 8%;
-  background: linear-gradient(135deg, #f6fbf8 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #c2ebd3 0%, #ffffff 100%);
   border-radius: 0 0 2rem 2rem;
   position: relative;
   overflow: hidden;
@@ -17,6 +17,7 @@
   z-index: 0;
 }
 
+/* Layout wrapper (użyj gdy chcesz kolumny z obrazkiem) */
 .inner {
   display: flex;
   align-items: flex-start;
@@ -27,6 +28,7 @@
   z-index: 1;
 }
 
+/* Obrazek (zakomentowany w JSX, ale zostawione style na wypadek użycia) */
 .imageWrapper {
   flex: 1;
   max-width: 400px;
@@ -39,10 +41,15 @@
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
 }
 
+/* Główna kolumna tekstowa (używana w Twoim jsx jako textWrapper) */
 .textWrapper {
   flex: 2;
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
 }
 
+/* Typografia */
 h1 {
   font-size: 2.4rem;
   color: #153d33;
@@ -51,7 +58,7 @@ h1 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #444;
   margin-bottom: 1.2rem;
   line-height: 1.7;
@@ -59,8 +66,15 @@ p {
 
 p strong {
   color: #2e8b57;
+  font-weight: 700;
 }
 
+/* Drobne poprawki wizualne dla fragmentów tekstu */
+.textWrapper p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Responsywność */
 @media (max-width: 900px) {
   .inner {
     flex-direction: column;
@@ -78,5 +92,9 @@ p strong {
 
   p {
     font-size: 1rem;
+  }
+
+  .textWrapper {
+    max-width: 100%;
   }
 }
