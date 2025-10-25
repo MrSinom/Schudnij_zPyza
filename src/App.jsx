@@ -2,6 +2,7 @@
 
 import { Routes, Route, Navigate } from "react-router-dom";
 
+
 import Cookies from "./Maintanance/Cookies";
 import Header from "./components/Header";
 import MainPage from "./components/MainPage";
@@ -14,6 +15,7 @@ import Footer from "./components/Footer";
 
 import CookiesPolicy from "./Maintanance/CookiesPolicy";
 import Policy from "./Maintanance/Policy";
+import ThankYouPage from "./components/ThankYouPage";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
 
           <Route path="/polityka-cookies" element={<CookiesPolicy />} />
           <Route path="/regulamin" element={<Policy />} />
+          <Route path="/dziekuje" element={<ThankYouPage />} />
+
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

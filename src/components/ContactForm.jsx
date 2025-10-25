@@ -1,18 +1,40 @@
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import styles from "./ContactForm.module.css";
+import emailjs from "emailjs-com";
 
 function ContactForm() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("Wysłane dane:", data);
-    reset();
+    const templateParams = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    };
+
+    emailjs
+      .send(
+        "service_10n7o4v",
+        "template_v9shyti",
+        templateParams,
+        "eLjIVPFYKuPxipu0H"
+      )
+      .then(() => {
+        reset();
+        navigate("/dziekuje"); // 🔁 przekierowanie
+      })
+      .catch((error) => {
+        console.error("Błąd wysyłania przez EmailJS:", error);
+      });
   };
+
 
   return (
     <section className={styles.wrapper}>
@@ -66,9 +88,7 @@ function ContactForm() {
           Wyślij
         </button>
 
-        {isSubmitSuccessful && (
-          <p className={styles.success}>Dziękuję! Wiadomość została wysłana.</p>
-        )}
+       
       </form>
     </section>
   );
