@@ -1,0 +1,22 @@
+.viewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.track {
+  display: flex;
+  height: 100%;
+  transition: transform 280ms cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+  user-select: none;
+}
+
+.page {
+  flex: 0 0 auto;
+  height: 100%;
+  overflow: auto;
+  box-sizing: border-box;
+}

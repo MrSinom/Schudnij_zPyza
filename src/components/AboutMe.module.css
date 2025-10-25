@@ -1,11 +1,24 @@
+/* wymuszamy spójne pudełkowanie */
+:global(html), :global(body), :global(#root) {
+  box-sizing: border-box;
+}
+:global(*), :global(*::before), :global(*::after) {
+  box-sizing: inherit;
+}
+
+/* cały "page" ma wypełniać obszar track — upewnij się, że to nadrzędny wrapper ma width: 100vw */
 .container {
+  width: 100%;
+  min-height: 100vh;        /* upewnia, że strona ma wysokość viewportu */
   padding: 4rem 8%;
   background: linear-gradient(135deg, #eef7f2 0%, #ffffff 100%);
   border-radius: 0 0 2rem 2rem;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;   /* ważne */
 }
 
+/* pseudo-element nie wpływa na szerokość strony */
 .container::before {
   content: "";
   position: absolute;
@@ -15,34 +28,45 @@
   height: 160%;
   background: radial-gradient(circle at 20% 80%, #e3f3ea, transparent 65%);
   z-index: 0;
+  pointer-events: none;
 }
 
+/* inner zajmuje 100% szerokości rodzica, ale ograniczamy treść poprzez max-width */
 .inner {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  width: 100%;              /* kluczowe: wewnętrzny wrapper nie zmniejsza page */
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto;           /* centrowanie treści wewnątrz strony — nie wpływa na szerokość .container */
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
+/* obrazek i tekst pozostają wewnątrz max-width, nie absolutnie pozycjonowane */
 .imageWrapper {
   flex: 1;
   max-width: 350px;
+  box-sizing: border-box;
 }
 
 .imageWrapper img {
-  width: 250px;
+  width: 100%;
+  max-width: 250px;
   height: auto;
   border-radius: 1rem;
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+  display: block;
 }
 
+/* tekstowa kolumna */
 .textWrapper {
   flex: 2;
+  box-sizing: border-box;
 }
 
+/* typografia (kolory poprawione jeśli potrzebne) */
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -52,7 +76,7 @@ h1 {
 
 p {
   font-size: 1.1rem;
-  color: #cdeed6;
+  color: #4a4a4a; /* poprzedni kolor był zbyt jasny */
   margin-bottom: 1.2rem;
   line-height: 1.7;
 }
@@ -61,6 +85,7 @@ p strong {
   color: #2e8b57;
 }
 
+/* responsywność */
 @media (max-width: 900px) {
   .inner {
     flex-direction: column;
@@ -80,3 +105,7 @@ p strong {
     font-size: 1rem;
   }
 }
+
+/* debug (tymczasowo użyj, aby zobaczyć realne obszary .page i .container) */
+/* usuń lub zakomentuj po weryfikacji */
+.debug-outline .container { outline: 1px dashed rgba(255,0,0,0.15); }

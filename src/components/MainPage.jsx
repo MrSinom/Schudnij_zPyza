@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./MainPage.module.css";
 import heroImg from "../assets/portrait.svg";
 import Particles from "../Animation/Particles"
@@ -13,8 +15,14 @@ function MainPage() {
             Jedzenie, ruch i spokój — bez spiny, bez cudów. Tylko rzeczy, które działają.
           </p>
           <div className={styles.ctaRow}>
-            <button className={styles.ctaPrimary}>Zacznij</button>
-            <button className={styles.ctaSecondary}>Poznaj podejście</button>
+           <Link to="/training" className={styles.ctaPrimary}>
+        Zacznij
+      </Link>
+
+          <Link to="/about" className={styles.ctaSecondary}>
+        Poznaj podejście
+      </Link>
+
           </div>
         </div>
         <div className={styles.imageWrapper}>
