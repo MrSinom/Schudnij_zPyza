@@ -83,8 +83,8 @@ export default function Particles({ count = 100}) {
     function step() {
       const b = rect();
       for (const p of particlesRef.current) {
-        p.vx += rand(-0.02, 0.02);
-        p.vy += rand(-0.02, 0.02);
+        p.vx += rand(-0.001, 0.001);
+        p.vy += rand(-0.001, 0.001);
 
         if (mouse.current.active && mouse.current.x != null) {
           const dx = p.x - mouse.current.x;
