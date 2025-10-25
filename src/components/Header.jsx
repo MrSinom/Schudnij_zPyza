@@ -34,10 +34,16 @@ function Header() {
           <img src={logo} alt="Logo" />
         </div>
 
-        <button className={styles.hamburger} onClick={toggleMenu}>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
+        <button
+  className={`${styles.hamburger} ${menuOpen ? styles.open : ""}`}
+  onClick={toggleMenu}
+  aria-label="menu"
+  aria-expanded={menuOpen}
+>
+<span className={styles.line}></span>
+<span className={styles.line}></span>
+<span className={styles.line}></span>
+
         </button>
 
         <nav className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>

@@ -9,7 +9,7 @@ const SVG_SHAPES = [Brocoil_1, Brocoil_2, Brocoil_3];
 
 function rand(min, max) { return Math.random() * (max - min) + min; }
 
-export default function Particles({ count = 100}) {
+export default function Particles({ count = 200}) {
   const containerRef = useRef(null);
   const particlesRef = useRef([]);
   const mouse = useRef({ x: null, y: null, active: false });
@@ -25,7 +25,7 @@ export default function Particles({ count = 100}) {
 
     // Inicjalizacja cząstek
     particlesRef.current = new Array(effectiveCount).fill().map(() => {
-      const r = Math.floor(rand(40, 70));
+      const r = Math.floor(rand(100, 90));
       const el = document.createElement("div");
       el.className = styles.particle;
       el.style.width = `${r}px`;
