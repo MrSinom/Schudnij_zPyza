@@ -34,12 +34,7 @@ function Ebook() {
 
     // 3) wymuszone pobranie pliku z public/
     const url = "/ebook-sample.pdf";
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "ebook-sample.pdf";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    window.open("/ebook-sample.pdf")
   } finally {
     setTimeout(() => setLoading(false), 600);
   }

@@ -51,6 +51,7 @@
   transition: transform 300ms ease, opacity 200ms ease;
   transform-origin: center;
   position: relative;
+  color: #5c4b3b;
 }
 
 .line:nth-child(1) {
