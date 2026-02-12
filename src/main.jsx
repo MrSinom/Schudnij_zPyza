@@ -7,7 +7,7 @@ import App from "./App";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/Schudnij_zPyza/">
+    <BrowserRouter >
       <App />
     </BrowserRouter>
   </StrictMode>
