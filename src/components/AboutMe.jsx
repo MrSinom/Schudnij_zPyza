@@ -4,16 +4,19 @@ import profileImg from "../assets/potret_SzP.png";
 function AboutMe(){
   return (
     <section className={styles.container}>
-    
+   
       <div className={styles.inner}>
-         
+         <h1>O mnie</h1>
+           
         <div className={styles.imageWrapper}>
           <img src={profileImg} alt="Pyza - trenerka i dietetyk" />
         </div>
         
 
         <div className={styles.textWrapper}>
-           <h1>O mnie</h1>
+            <p>
+            <strong>„Zmiana zaczyna się w głowie a ciało tylko podąża za decyzją.”</strong> 
+          </p>
           
           <p>
             <strong>Hej, jestem Kinia, schudnij z Pyzą.</strong>
@@ -32,9 +35,7 @@ Gotowanie stało się dla mnie czymś więcej niż pasją. Dzięki tworzeniu prz
 
 Wierzę, że każdy może zmienić swoje życie.
 Wystarczy zacząć.</p>
-          <p>
-            <strong>Moje motto:</strong> „Zmiana zaczyna się w głowie a ciało tylko podąża za decyzją.”
-          </p>
+       
         </div>
         
         {}

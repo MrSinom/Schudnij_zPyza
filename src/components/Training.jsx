@@ -5,14 +5,14 @@ import forma from "../assets/rzezba.jpeg";
 function Training() {
   return (
     <section className={styles.container}>
-      
+        <h1>Treningi z Pyzą</h1>
       <div className={styles.inner}>
         <div className={styles.imageWrapper}>
           <img src={trainingImg} alt="Kinga - treningi personalne" />
         </div>
         
         <div className={styles.textWrapper}>
-          <h1>Treningi z Pyzą</h1>
+        
           <p>
             <strong>Trening to coś więcej niż tylko ruch to inwestycja w zdrowie, sprawność i lepsze samopoczucie.</strong> 
           </p>

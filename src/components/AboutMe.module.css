@@ -1,6 +1,6 @@
 .container {
   padding: 4rem 5%; /* Nieco mniejszy padding boczny, żeby odzyskać miejsce */
-  background: linear-gradient(135deg, #eef7f2 0%, #ffffff 100%);
+  background:  linear-gradient(135deg, #eef7f2 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
@@ -52,7 +52,7 @@ h1{
   line-height: 1.7;
   color: #333;
   margin-bottom: 1.2rem;
-  text-align: justify; /* Opcjonalnie: tekst będzie ładnie wyrównany do brzegów */
+  text-align: left;
 }
 
 /* KLUCZOWA POPRAWKA: Przełączamy na tryb pionowy wcześniej */
@@ -70,6 +70,6 @@ h1{
   }
 
   .textWrapper p {
-    text-align: center; /* Na mniejszych ekranach wyśrodkowany tekst wygląda lepiej */
+    text-align: left; /* Na mniejszych ekranach wyśrodkowany tekst wygląda lepiej */
   }
 }
