@@ -43,14 +43,14 @@ function Ebook() {
   return (
     <section className={styles.wrapper}>
       <div className={styles.content}>
-        <h1>E-book: Jedz normalnie, chudnij rozsądnie</h1>
+        <h1>Jedz smacznie, zdrowo i osiągaj swoje cele.</h1>
         <p className={styles.lead}>
-          Kompendium praktycznych zasad żywienia, które możesz wdrożyć od razu — bez liczenia każdego grama.
+          Mój eBook pokazuje, że jedzenie to nie nasz wróg, a prawdziwe paliwo dla ciała i umysłu – i że paliwo nie musi być monotonne. To zbiór sprawdzonych przepisów, które udowadniają, że zdrowe odżywianie może być smaczne, ciekawe i satysfakcjonujące, a przy tym pomaga schudnąć, zadbać o sylwetkę i poczuć się lepiej każdego dnia.
         </p>
         <ul className={styles.features}>
-          <li>Prosty system porcji zamiast sztywnych diet</li>
-          <li>Przepisy i warianty pod różne kaloryczności</li>
-          <li>Check-listy i gotowe plany na tydzień</li>
+          <li>Bez restrykcji. </li>
+          <li>Bez głodówek. </li>
+          <li>Z efektem.</li>
         </ul>
         <div className={styles.ctaRow}>
           <button
@@ -63,16 +63,7 @@ function Ebook() {
             {loading ? "Przygotowywanie..." : "Pobierz próbkę (PDF)"}
           </button>
 
-          <button
-            className={styles.preview}
-            onClick={() => {
-              // przykład: przewinięcie do sekcji spisu treści, jeśli jest w komponencie
-              const toc = document.getElementById("ebook-toc");
-              if (toc) toc.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Zobacz spis treści
-          </button>
+          
         </div>
       </div>
 

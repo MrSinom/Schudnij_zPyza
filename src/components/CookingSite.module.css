@@ -6,95 +6,99 @@
   overflow: hidden;
 }
 
-.container::before {
-  content: "";
-  position: absolute;
-  right: -10%;
-  top: -20%;
-  width: 160%;
-  height: 160%;
-  background: radial-gradient(circle at 80% 30%, #eaf6f0, transparent 60%);
-  z-index: 0;
-}
-
-/* Layout wrapper (użyj gdy chcesz kolumny z obrazkiem) */
 .inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
   max-width: 1100px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-/* Obrazek (zakomentowany w JSX, ale zostawione style na wypadek użycia) */
-.imageWrapper {
-  flex: 1;
-  max-width: 400px;
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
-.imageWrapper img {
+.title {
   width: 100%;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
-}
-
-/* Główna kolumna tekstowa (używana w Twoim jsx jako textWrapper) */
-.textWrapper {
-  flex: 2;
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-}
-
-/* Typografia */
-h1 {
   font-size: 2.4rem;
   color: #153d33;
   margin-bottom: 1.2rem;
   font-weight: 800;
+  text-align: left; /* Wymuszenie lewej strony */
+  order: 1;
 }
 
-p {
+/* Style dla obrazków */
+.imageBox {
+  flex: 1 1 calc(33.333% - 1.5rem);
+  min-width: 250px;
+  display: flex;
+  justify-content: center; /* Centruje obrazek wewnątrz boxa */
+  order: 2;
+}
+
+.imageBox img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+}
+
+/* Style dla tekstów */
+.textBox {
+  width: 100%;
+  order: 3;
+  text-align: left; /* Tekst zawsze do lewej */
+}
+
+.textBox p {
   font-size: 1.05rem;
   color: #444;
-  margin-bottom: 1.2rem;
   line-height: 1.7;
+  margin-bottom: 1.2rem;
 }
 
-p strong {
-  color: #2e8b57;
-  font-weight: 700;
-}
+/* --- RESPONSYWNOŚĆ (TELEFONY) --- */
 
-/* Drobne poprawki wizualne dla fragmentów tekstu */
-.textWrapper p:last-of-type {
-  margin-bottom: 0;
-}
-
-/* Responsywność */
 @media (max-width: 900px) {
-  .inner {
+  .contentWrapper {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start; /* Wszystko domyślnie do lewej */
   }
 
-  .imageWrapper {
-    max-width: 280px;
-  }
-
-  h1 {
+  .title {
     font-size: 2rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
   }
 
-  p {
-    font-size: 1rem;
-  }
-
-  .textWrapper {
+  .imageBox {
+    width: 100%;
     max-width: 100%;
+    display: flex;
+    justify-content: center; /* To sprawi, że tylko zdjęcia będą na środku */
+    margin: 1.5rem 0;
   }
+
+  .imageBox img {
+    height: auto;
+    max-height: 450px;
+    width: 100%; /* Zdjęcie zajmuje całą szerokość dostępną w max-width */
+  }
+
+  .textBox {
+    width: 100%;
+    text-align: left;
+  }
+
+  /* Kolejność przeplatana na mobile */
+  .title { order: 1; }
+  .text1 { order: 2; }
+  .img1  { order: 3; }
+  .text2 { order: 4; }
+  .img2  { order: 5; }
+  .text3 { order: 6; }
+  .img3  { order: 7; }
 }
