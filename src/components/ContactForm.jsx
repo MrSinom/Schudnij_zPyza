@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import styles from "./ContactForm.module.css";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser"; // Zmiana na nowszą bibliotekę
 
 function ContactForm() {
   const navigate = useNavigate();
@@ -22,19 +22,18 @@ function ContactForm() {
     emailjs
       .send(
         "service_10n7o4v",
-        "template_v9shyti",
+        "template_ymbjw2c",
         templateParams,
-        "eLjIVPFYKuPxipu0H"
+        "eLjIVPFYKuPxipu0H" // Public Key
       )
       .then(() => {
         reset();
-        navigate("/dziekuje"); // 🔁 przekierowanie
+        navigate("/dziekuje");
       })
       .catch((error) => {
-        console.error("Błąd wysyłania przez EmailJS:", error);
+        console.error("Błąd wysyłania przez EmailJS:", error.text || error);
       });
   };
-
 
   return (
     <section className={styles.wrapper}>
@@ -87,8 +86,6 @@ function ContactForm() {
         <button type="submit" className={styles.submit}>
           Wyślij
         </button>
-
-       
       </form>
     </section>
   );

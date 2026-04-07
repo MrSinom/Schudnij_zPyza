@@ -2,7 +2,7 @@
 function ThankYouPage() {
   return (
     <div>
-      <p>DANKE ZA KONTAKT MORDZIATYYY MORDZIATY </p>
+      <p>Dziękuje za kontakt! Otrzymasz odpowiedź jak najszybciej, jak tylko będzie to możliwe!</p>
     </div>
   )
 };
