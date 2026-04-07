@@ -6,7 +6,7 @@ import kuchnia3 from "../assets/kuchnia3.jpeg";
 function CookingSite() {
   return (
     <section className={styles.container}>
-        <h1 className={styles.title}>Kuchnia Pyzy</h1>
+   
       <div className={styles.inner}>
     
         <div className={styles.contentWrapper}>
@@ -19,15 +19,17 @@ function CookingSite() {
           <div className={`${styles.imageBox} ${styles.img3}`}>
             <img src={kuchnia3} alt="Kuchnia Pyzy 3" />
           </div>
-
+  
           {/* Teksty */}
           <div className={`${styles.textBox} ${styles.text1}`}>
+            <h1 className={styles.title}>Kuchnia Pyzy</h1>
             <p>
               <strong>Już w 2026</strong> roku zaproszę Was w wyjątkowe miejsce – do moich rodzinnych stron, do Gostyni, gdzie w Winnicy Gostynka powstanie coś więcej niż kuchnia. Od czwartku do niedzieli będę prowadzić autorską kuchnię degustacyjną, w której smak, jakość i doświadczenie będą grały główną rolę.
             </p>
           </div>
 
           <div className={`${styles.textBox} ${styles.text2}`}>
+               
             <p>
               Co miesiąc przygotuję nowe, kameralne menu degustacyjne, składające się z 4 starannie skomponowanych dań, idealnie dopasowanych do win z Winnicy Gostynka. Będę pracować na produktach sezonowych, wracając do korzeni, naturalnych smaków i jakości.
             </p>

@@ -1,6 +1,6 @@
-// src/components/Cookies.jsx
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga4"; // DODANE
 import styles from "./Cookies.module.css";
 
 const Cookies = () => {
@@ -15,11 +15,22 @@ const Cookies = () => {
 
   const handleAccept = () => {
     localStorage.setItem("cookiesConsent", "accepted");
+    
+    // Kluczowy moment: Inicjalizujemy GA4 natychmiast po kliknięciu
+    ReactGA.initialize(import.meta.env.VITE_GA_ID);
+    
+    // Wysyłamy pierwsze wejście na stronę (bo useEffect w App.jsx mógł je pominąć przez brak zgody)
+    ReactGA.send({ 
+      hitType: "pageview", 
+      page: window.location.pathname + window.location.search 
+    });
+
     setVisible(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookiesConsent", "declined");
+    // Nic więcej nie robimy - GA4 nigdy się nie odpali
     setVisible(false);
   };
 

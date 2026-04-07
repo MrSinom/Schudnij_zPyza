@@ -20,16 +20,23 @@ import ThankYouPage from "./components/ThankYouPage";
 ReactGA.initialize("G-N5WEC963HK"); 
 
 function App() {
-  const location = useLocation();
+
+ const location = useLocation();
 
   useEffect(() => {
-    // To wysyła informację o nowej podstronie przy każdej zmianie adresu
-    ReactGA.send({ 
-      hitType: "pageview", 
-      page: location.pathname + location.search 
-    });
+    const consent = localStorage.getItem("cookiesConsent");
+    
+    if (consent === "accepted") {
+      // Inicjalizujemy tylko, jeśli jest zgoda
+      // Jeśli ReactGA już był zainicjalizowany, biblioteka to obsłuży
+      ReactGA.initialize(import.meta.env.VITE_GA_ID); 
+      
+      ReactGA.send({ 
+        hitType: "pageview", 
+        page: location.pathname + location.search 
+      });
+    }
   }, [location]);
-
   return (
     <>
       <Header />
