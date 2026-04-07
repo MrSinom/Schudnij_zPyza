@@ -5,8 +5,10 @@ import forma from "../assets/rzezba.jpeg";
 function Training() {
   return (
     <section className={styles.container}>
-        <h1>Treningi z Pyzą</h1>
+      
       <div className={styles.inner}>
+          <h1>Treningi z Pyzą</h1>
+          <p></p>
         <div className={styles.imageWrapper}>
           <img src={trainingImg} alt="Kinga - treningi personalne" />
         </div>
